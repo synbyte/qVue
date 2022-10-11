@@ -4,9 +4,8 @@
 
 tasks:
   
-
-  - init: npm install -g @quasar/cli
-          npm install
+  - before: npm install -g @quasar/cli
+  - init: npm install
   - command: quasar dev
 ports:
   - port: 9000
