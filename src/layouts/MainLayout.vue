@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lhh Lpr lFf">
+    <q-header id="topbar" class="text-black bg-secondary" elevated>
       <q-toolbar>
         <q-btn
           flat
@@ -11,11 +11,11 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-tabs v-model="tab">
+        <q-route-tab animated transition-prev="jump-up" transition-next="jump-up" to="/" icon="home"></q-route-tab>
+        <q-route-tab to="/upload" label="upload"></q-route-tab>
+        </q-tabs>
 
-     
         <q-icon name="dark_mode" @click="$q.dark.toggle()"></q-icon>
        </q-toolbar>
     </q-header>
@@ -45,7 +45,11 @@
     </q-page-container>
   </q-layout>
 </template>
-
+<style>
+#topbar {
+  background:linear-gradient(90deg,red,transparent);
+}
+</style>
 <script>
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
