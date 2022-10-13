@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
+    <q-header class="header" elevated>
+      <q-toolbar class="purple-10">
         <q-btn
           flat
           dense
@@ -49,6 +49,8 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
+import { useQuasar } from 'quasar'
+const $q = useQuasar;
 
 const linksList = [
   {
@@ -103,6 +105,8 @@ export default defineComponent({
   },
 
   setup () {
+  const $q = useQuasar();
+    $q.dark.set(true);
     const leftDrawerOpen = ref(false)
 
     return {
@@ -115,3 +119,13 @@ export default defineComponent({
   }
 })
 </script>
+<style>
+    body{
+        
+        background:#215262
+    }
+.header {
+background:pink;
+    background:#ff9d2b;
+}
+</style>

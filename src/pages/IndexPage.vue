@@ -22,7 +22,8 @@ export default defineComponent({
    }   
   },
   onMounted(){
-      $q.fullscreen.request()
+      $q.fullscreen.request();
+      $q.dark.set(true);
   }
 
 })
